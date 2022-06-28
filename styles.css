@@ -6,7 +6,16 @@ body {
   font-size: 75px;
   overflow: hidden;
   perspective: 10em;
-  perspective-origin: 50% calc(50% - 2.5em); }
+  perspective-origin: 50% calc(50% - 2.5em);
+  animation: PerspectiveScene 8s ease-out infinite; }
+
+@keyframes PerspectiveScene {
+  0% {
+    perspective-origin: 50% calc(50% - 1em); }
+  50% {
+    perspective-origin: 50% calc(50% - 4em); }
+  100% {
+    perspective-origin: 50% calc(50% - 1em); } }
 
 .scene {
   position: relative;
@@ -15,7 +24,7 @@ body {
 
 @keyframes rotateScene {
   to {
-    transform: rotateY(360deg); } }
+    transform: rotateY(-360deg); } }
 
 .ball {
   width: 1em;
@@ -46,10 +55,10 @@ body {
   animation: boxShadow 2s ease-out infinite; }
 
 @keyframes boxShadow {
-  0%, 8%, 92.5%, 100% {
+  0%, 8%, 66.66%, 100% {
     transform: scale(1);
     opacity: 1; }
-  50% {
+  40% {
     transform: scale(2);
     opacity: .5;
     animation-timing-function: ease-in; } }
